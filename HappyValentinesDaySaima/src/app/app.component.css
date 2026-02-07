@@ -1,0 +1,210 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents scrollbars */
+  height: 100vh;
+  width: 100vw;
+}
+.valentine-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #ffecd2 100%);
+  padding: 20px;
+}
+
+.content {
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(255, 105, 135, 0.3);
+  padding: 60px 40px;
+  text-align: center;
+  min-width: 500px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.valentine-message {
+  font-size: 2.5rem;
+  color: #ff1744;
+  margin-bottom: 50px;
+  animation: fadeIn 1s ease-in;
+}
+
+.name {
+  color: #e91e63;
+  font-weight: bold;
+  /* text-decoration: underline; */
+  text-decoration-color: #ff4081;
+}
+
+.buttons-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0; /* Center the button area */
+}
+
+.btn {
+  padding: 6px 15px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-yes {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  transition: all 0.3s ease;
+  position: absolute;
+  left: 85px;
+  z-index: 1;
+}
+
+.btn-yes:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+}
+
+.btn-yes:active {
+  transform: scale(1.05);
+}
+
+
+
+.btn-no {
+  background: linear-gradient(135deg, #ddd 0%, #bbb 100%);
+  color: #666;
+  position: fixed;  /* Change from relative to absolute */
+  transition: all 0.1s ease;
+  z-index: 2;   /* Change from 1 to 2 to be above Yes button */
+}
+
+/* Success screen */
+.celebration {
+  font-size: 3rem;
+  color: #ff1744;
+  margin-bottom: 20px;
+  animation: bounce 0.6s ease-in-out;
+}
+
+.success-message {
+  font-size: 1.5rem;
+  color: #e91e63;
+  margin-bottom: 30px;
+  animation: fadeIn 1s ease-in 0.3s both;
+}
+
+.hearts {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 2rem;
+}
+
+.heart {
+  display: inline-block;
+  animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+.heart:nth-child(1) { animation-delay: 0s; }
+.heart:nth-child(2) { animation-delay: 0.2s; }
+.heart:nth-child(3) { animation-delay: 0.4s; }
+.heart:nth-child(4) { animation-delay: 0.6s; }
+.heart:nth-child(5) { animation-delay: 0.8s; }
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .content {
+    min-width: 90%;
+    padding: 40px 20px;
+  }
+
+  .valentine-message {
+    font-size: 1.8rem;
+  }
+  
+  .btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+  
+  .celebration {
+    font-size: 2.5rem;
+  }
+  
+  .success-message {
+    font-size: 1.2rem;
+  }
+}
+/* Popup styling */
+.popup {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  font-size: 1.3rem;
+  font-weight: bold;
+  animation: popupFadeIn 2.0s ease-out;
+}
+
+.popup p {
+  margin: 0;
+}
+
+@keyframes popupFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
