@@ -89,6 +89,25 @@ body, html {
   transition: all 0.1s ease;
   z-index: 2;   /* Change from 1 to 2 to be above Yes button */
 }
+.copyright{
+  
+
+  position: fixed;
+  bottom: 20px;  /* Distance from bottom of screen */
+  left: 50%;
+  transform: translateX(-50%);  /* Center it horizontally */
+  text-align: center;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 0.85rem;
+  color: #999;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  z-index: 100;  /* Ensure it stays on top */
+
+}
+.copyright small {
+  opacity: 7.9;  /* Slight transparency for subtle look */
+}
 
 /* Success screen */
 .celebration {

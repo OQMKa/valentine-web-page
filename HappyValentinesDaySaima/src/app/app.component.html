@@ -2,7 +2,7 @@
 <div class="valentine-container">
   <div class="content" *ngIf="!showSuccess">
     <h1 class="valentine-message">
-      <span class="name">Sej. </span>, will you be my Valentine?
+      <span class="name">Saima </span>, will you be my Valentine?
     </h1>
     <div class="buttons-wrapper">
       <button class="btn btn-yes" (click)="onYesClick()">Yes! 💕</button>
@@ -15,11 +15,16 @@
         No
       </button>
     </div>
+    <div class="copyright">
+      <small>made by rohanomm © </small>
+    </div>
+    <!-- <small .>made by rohanomm © </small> -->
   </div>
 
   <div class="content" *ngIf="showSuccess">
-    <h1 class="celebration">🎉 Chalo.. ye bhi thik h! 🎉</h1>
-    <p class="success-message">I'm so happy! Kabhi to ha bolli tu !  💝</p>
+    <h1 class="celebration">🎉 Yayyy...  🎉</h1>
+    <p class="success-message"> So happy!  🤗</p>
+    <p class="success-message"> Aise hi ha bola krrrr 💕</p>
     <div class="hearts">
       <span class="heart">💖</span>
       <span class="heart">💗</span>
@@ -28,8 +33,14 @@
       <span class="heart">💝</span>
     </div>
   </div>
-  <div class="popup" *ngIf="showPopup">
-    <p>💡 "Yes" bhi try kar skti ho also! 😒</p>
+  <div class="copyright">
+    <small>made by rohanomm © </small>
+  </div>
+  <div class="popup" *ngIf="showPopup1">
+    <p>💡 "Yes" bhi try kar skti ho.. 😂</p>
+  </div>
+  <div class="popup" *ngIf="showPopup2">
+    <p>💡 Acha karle karle.. 😂😂</p>
   </div>
 </div>
 

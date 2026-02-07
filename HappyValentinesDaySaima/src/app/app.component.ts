@@ -10,7 +10,8 @@ export class AppComponent {
   noButtonLeft = 0;
   noButtonTop = 0;
   noClickCount = 0;
-  showPopup = false;
+  showPopup1 = false;
+  showPopup2 = false;
   private isFirstRender = true;
 
   ngAfterViewInit() {
@@ -37,14 +38,20 @@ export class AppComponent {
     this.showSuccess = true;
   }
 
+
   moveNoButton() {
     this.noClickCount++;
 
     if (this.noClickCount === 3) {
-      this.showPopup = true;
+      this.showPopup1 = true;
       setTimeout(() => {
-        this.showPopup = false;
-      }, 2000);
+        this.showPopup1 = false;
+      }, 5000);
+    }else if(this.noClickCount === 7){
+      this.showPopup2 = true;
+      setTimeout(() => {
+        this.showPopup2 = false;
+      }, 5000);
     }
 
     // Get viewport dimensions
