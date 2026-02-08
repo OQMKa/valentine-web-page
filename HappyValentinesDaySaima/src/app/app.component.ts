@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-root',
@@ -36,7 +37,31 @@ export class AppComponent {
 
   onYesClick() {
     this.showSuccess = true;
+    this.sendNotification();
   }
+  sendNotification() {
+    const templateParams = {
+      to_email: 'omkarnake17@gmail.com',  // Your email
+      message: 'Saima haa boliii..! 🎉💕',
+      timestamp: new Date().toLocaleString()
+    };
+
+    emailjs.send(
+      'service_zkisf2j',      // Replace with your EmailJS Service ID
+      'template_9mq26el',     // Replace with your EmailJS Template ID
+      templateParams,
+      'kgGQBFDSCGJ416kl0'       // Replace with your EmailJS Public Key
+    ).then(
+      (response) => {
+        console.log('Email sent successfully!', response.status, response.text);
+      },
+      (error) => {
+        console.log('Failed to send email:', error);
+      }
+    );
+  }
+  
+    
 
 
   moveNoButton() {
